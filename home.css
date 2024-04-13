@@ -1,0 +1,277 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --white-color: #fff;
+  --brown-color: #8B4513;
+  --grey-color: #707070;
+  --grey-color-light: #aaa;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#mapid {
+    position: absolute;
+    top: 60px;
+    left: 250px;
+    right: 0;
+    bottom: 40px;
+}
+
+/* navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 50px;
+    z-index: 1000;
+    box-shadow: 0 0 2px var(--grey-color-light);
+  }
+  .logo_item {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--black-color);
+  }
+  .navbar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  
+  .navbar_content {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+  }
+  
+  .navbar_content .nav_link {
+    text-decoration: none;
+    color: var(--grey-color);
+    font-size: 18px;
+  }
+  
+  .navbar_content .nav_link:hover {
+    color: var(--brown-color);
+  }
+  
+/* Tambahkan gaya CSS sesuai kebutuhan */
+.nav_link.active {
+    color: #8B4513;
+  }
+  
+
+
+/* Styling sidebar */
+.sidebar {
+    background-color: #fcfcfc;
+    color: #333;
+    padding: 85px 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    bottom: 40px;
+    z-index: 100;
+    overflow-y: scroll;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.check-btn {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.check-btn .btn-text {
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+}
+
+.select-btn1,
+.select-btn2,
+.select-btn3 {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn1 .btn-text,
+.select-btn2 .btn-text,
+.select-btn3 .btn-text {
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+}
+
+.select-btn1 .arrow-dwn,
+.select-btn2 .arrow-dwn,
+.select-btn3 .arrow-dwn {
+    display: flex;
+    height: 21px;
+    width: 21px;
+    color: white;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #604c32;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.select-btn1.open .arrow-dwn,
+.select-btn2.open .arrow-dwn,
+.select-btn3.open .arrow-dwn {
+    transform: rotate(-180deg);
+}
+
+.list-items1,
+.list-items2,
+.list-items3 {
+    position: relative;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.select-btn1.open ~ .list-items1,
+.select-btn2.open ~ .list-items2,
+.select-btn3.open ~ .list-items3 {
+    display: block;
+}
+
+.list-items1 .item1,
+.list-items2 .item2,
+.list-items3 .item3 {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 15px;
+    border-radius: 8px;
+}
+
+.list-items1 .item1:hover,
+.list-items2 .item2:hover,
+.list-items3 .item3:hover {
+    background-color: rgb(225, 219, 195);
+}
+
+.item1 .item-text,
+.item2 .item-text,
+.item3 .item-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+/* gaya default checkbox */
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  
+/* Styling footer */
+.footer {
+    background-color: #604c32;
+    color: #fff;
+    padding: 9px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 10;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Legend specific */
+.legend {
+    padding: 6px 8px;
+    font: 14px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    line-height: 24px;
+    color: #555;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+}
+
+.legend h4 {
+    text-align: center;
+    font-size: 16px;
+    margin: 2px 12px 8px;
+    color: #777;
+}
+
+.legend span {
+    position: relative;
+    bottom: 3px;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin: 0 8px 0 0;
+    opacity: 0.7;
+}
+
+.legend i.icon {
+    background-size: 18px;
+    background-color: rgba(255, 255, 255, 1);
+}
