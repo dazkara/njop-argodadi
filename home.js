@@ -169,7 +169,7 @@ function toggleLayer(layerName) {
                         if (layerName === 'estimasiNJOP') {
                             var formattedEstimasi = numberWithCommas(feature.properties.estimasi);
                             // Tambahkan popup dengan nilai estimasi yang diformat
-                            var popupContent = "<b>Estimasi: </b>" + formattedEstimasi + "<br><b>Penggunaan Lahan: </b>" + feature.properties.REMARK;
+                            var popupContent = "<b>Estimasi NJOP: </b>" + formattedEstimasi + "<br><b>Penggunaan Lahan: </b>" + feature.properties.REMARK;
                             layer.bindPopup(popupContent);
                         } else if (layerName === 'fasilitasUmum') {
                             var Keterangan = feature.properties.Keterangan;
